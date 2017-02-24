@@ -1,0 +1,30 @@
+{
+  "name": "http-api-assignment-ii",
+  "version": "1.0.0",
+  "engines": {
+    "node": "7.4.0",
+    "npm": "4.0.5"
+  },
+  "description": "Assignment to learn how to create a simple http API using the GET, HEAD & POST",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "pretest": "eslint ./src",
+    "test": "echo \"No Tests\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thereseh/http-api-assignment-ii.git"
+  },
+  "author": "Therese Henriksson",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/thereseh/http-api-assignment-ii/issues"
+  },
+  "homepage": "https://github.com/thereseh/http-api-assignment-ii#readme",
+  "devDependencies": {
+    "eslint": "^3.16.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0"
+  }
+}
