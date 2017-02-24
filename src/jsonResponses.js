@@ -5,9 +5,9 @@ const crypto = require('crypto');
 const users = {};
 
 // sha1 is a bit of a quicker hash algorithm for insecure things
-let etag;
+let etag = crypto.createHash('sha1').update(JSON.stringify(users));
 // grab the hash as a hex string
-let digest;
+let digest = etag.digest('hex');
 
 const respondJSON = (request, response, status, object) => {
   const headers = {
@@ -40,8 +40,6 @@ const getUsers = (request, response) => {
 
     return respondJSONMeta(request, response, 304);
   }
-  etag = crypto.createHash('sha1').update(JSON.stringify(users));
-  digest = etag.digest('hex');
 
   return respondJSON(request, response, 200, responseJSON);
 };

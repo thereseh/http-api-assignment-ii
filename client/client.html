@@ -8,8 +8,6 @@
   <script type="text/babel">
     const handleResponse = (xhr, parseResponse) => {
       const content = document.querySelector('#content');
-
-       console.log(xhr.status);
       
        switch(xhr.status) {
         case 200: //success
@@ -18,9 +16,6 @@
             content.innerHTML += JSON.stringify(JSON.parse(xhr.response).users);
             console.dir(JSON.parse(xhr.response));
           }
-          break;
-        case 304:
-          content.innerHTML = `<b>Success</b><br><br>`;
           break;
         case 404:
           content.innerHTML = `<b>Resource Not Found</b><br><br>`;
@@ -63,7 +58,6 @@
     };
 
     const sendPost = (e, nameForm) => {
-      console.log("Click add user");
       const url = nameForm.getAttribute('action');
       const method = nameForm.getAttribute('method');
       
